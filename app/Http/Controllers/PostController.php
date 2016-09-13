@@ -26,7 +26,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('post.create');
     }
 
     /**
@@ -37,7 +37,10 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Post::create($request->toArray());
+
+        return redirect()->route('post.index')
+            ->with('message', 'Post created successfully.');
     }
 
     /**
