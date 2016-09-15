@@ -7,15 +7,23 @@
 
             <div class="field">
                 <label>Name</label>
-                <input name="name" placeholder="My Post Name" type="text">
+                <textarea name="name"></textarea>
+                {{-- <input name="name" placeholder="My Post Name" type="text"> --}}
             </div>
 
             <div class="field">
                 <label>Content</label>
-                <textarea name="content" rows="25"></textarea>
+                <textarea name="content"></textarea>
             </div>
 
             <button class="ui button" type="submit">Submit</button>
         </form>
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        var name    = new MediumEditor('[name="name"]', {toolbar: true});
+        var content = new MediumEditor('[name="content"]');
+    </script>
 @endsection
