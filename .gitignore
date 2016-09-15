@@ -1,7 +1,9 @@
+/.idea
 /node_modules
 /public/storage
 /vendor
-/.idea
+_ide_helper.php
+.env
+.phpstorm.meta.php
 Homestead.json
 Homestead.yaml
-.env
