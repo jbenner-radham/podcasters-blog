@@ -4,8 +4,10 @@
     <h2>Posts</h2>
 
     <ul>
-        @foreach ($posts as $post)
+        @forelse ($posts as $post)
             <li>{{ $post->name }}</li>
-        @endforeach
+        @empty
+            <p>Sorry, no posts yet  :(</p>
+        @endforelse
     </ul>
 @endsection
