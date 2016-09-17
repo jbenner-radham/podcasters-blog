@@ -5,7 +5,7 @@
 
     <ul>
         @forelse ($posts as $post)
-            <li>{{ $post->name }}</li>
+            <li>{{ strip_tags($post->name) }}</li>
         @empty
             <p>Sorry, no posts yet  :(</p>
         @endforelse
