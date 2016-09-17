@@ -16,7 +16,7 @@
     </head>
     <body>
         <div class="ui main text container" style="min-height: 80%; padding-top: 5em;">
-            <h1 class="ui dividing header"><i class="icon edit"></i> Podcasters Blog</h1>
+            <h1 class="ui dividing header"><i class="icon edit" style="margin-right: -0.1em"></i> Podcasters Blog</h1>
             @yield('content')
         </div>
 
