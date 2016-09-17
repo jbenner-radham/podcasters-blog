@@ -15,40 +15,14 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
-        <div class="ui fixed inverted menu">
-            <div class="ui container">
-                <a href="#" class="header item">
-                    {{-- <img class="logo" src="assets/images/logo.png"> --}}
-                    <i class="large edit icon"></i>
-                    Podcasters Blog
-                </a>
-                <a href="#" class="item">Home</a>
-                <div class="ui simple dropdown item">
-                    Dropdown <i class="dropdown icon"></i>
-                    <div class="menu">
-                        <a class="item" href="#">Link Item</a>
-                        <a class="item" href="#">Link Item</a>
-                        <div class="divider"></div>
-                        <div class="header">Header Item</div>
-                        <div class="item">
-                            <i class="dropdown icon"></i>
-                            Sub Menu
-                            <div class="menu">
-                                <a class="item" href="#">Link Item</a>
-                                <a class="item" href="#">Link Item</a>
-                            </div>
-                        </div>
-                        <a class="item" href="#">Link Item</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="ui main text container" style="min-height: 80%">
+        <div class="ui main text container" style="min-height: 80%; padding-top: 5em;">
+            <h1 class="ui dividing header"><i class="icon edit"></i> Podcasters Blog</h1>
             @yield('content')
         </div>
 
         <div class="ui inverted vertical footer segment">
+            <br>
+
             <div class="ui center aligned container">
                 <div class="ui stackable inverted divided grid">
                     <div class="three wide column">
@@ -84,12 +58,16 @@
                     </div>
                 </div>
 
+                <br>
+
                 <div class="ui horizontal inverted small divided link list">
                     <a class="item" href="#">Site Map</a>
                     <a class="item" href="#">Contact Us</a>
                     <a class="item" href="#">Terms and Conditions</a>
                     <a class="item" href="#">Privacy Policy</a>
                 </div>
+
+                <br>
             </div>
         </div>
 
