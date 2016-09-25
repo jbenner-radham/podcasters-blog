@@ -13,6 +13,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property integer $user_id
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Tag[] $tags
+ * @property-read \App\User $user
  * @method static \Illuminate\Database\Query\Builder|\App\Post whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Post whereName($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Post whereContent($value)
