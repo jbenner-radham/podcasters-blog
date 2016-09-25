@@ -19,5 +19,13 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Tag extends Model
 {
-    //
+    /**
+     * Get the posts associated with the tag.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function posts()
+    {
+        return $this->belongsToMany('App\Post');
+    }
 }
