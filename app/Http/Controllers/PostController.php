@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Post;
+use App\Providers\PostServiceProvider;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -45,7 +46,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        Post::create($request->toArray());
+        $post = new Post;
+        $post->name = PostServiceProvider::getName($request->content);
+        $post->content = PostServiceProvider::getContent($request->content);
+        $post->user_id = Auth::user()->id;
+
+        $post->save();
 
         return redirect()->route('post.index')
             ->with('message', 'Post created successfully.');

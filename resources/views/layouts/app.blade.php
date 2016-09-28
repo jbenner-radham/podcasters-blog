@@ -11,6 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+    @yield('styles')
     <link href="/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
@@ -80,6 +81,7 @@
     @yield('content')
 
     <!-- Scripts -->
+    @yield('scripts')
     <script src="/js/app.js"></script>
 </body>
 </html>

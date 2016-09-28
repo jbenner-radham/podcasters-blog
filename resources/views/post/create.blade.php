@@ -1,29 +1,39 @@
 @extends('layouts.app')
 
+@section('styles')
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/medium-editor/5.22.0/css/themes/tim.min.css">
+@endsection
+
 @section('content')
-    <div class="panel-body contact">
-        <form class="ui form" action="{{ route('post.store') }}" method="POST" >
-            {!! csrf_field() !!}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">New Post</div>
 
-            <div class="field">
-                <label>Name</label>
-                <textarea name="name"></textarea>
-                {{-- <input name="name" placeholder="My Post Name" type="text"> --}}
+                    <div class="panel-body">
+                        <form class="ui form" action="{{ route('post.store') }}" method="POST" >
+                            {!! csrf_field() !!}
+
+                            <div class="field">
+                                <textarea name="content"></textarea>
+                            </div>
+
+                            <br>
+
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-
-            <div class="field">
-                <label>Content</label>
-                <textarea name="content"></textarea>
-            </div>
-
-            <button class="ui button" type="submit">Submit</button>
-        </form>
+        </div>
     </div>
 @endsection
 
 @section('scripts')
+    <script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
     <script>
-        var name    = new MediumEditor('[name="name"]', {toolbar: true});
         var content = new MediumEditor('[name="content"]');
     </script>
 @endsection
