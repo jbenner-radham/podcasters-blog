@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use Barryvdh\Debugbar\ServiceProvider as DebugbarServiceProvider;
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Laravolt\Thunderclap\ServiceProvider as ThunderclapServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,8 +29,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if ($this->app->environment() !== 'production') {
-            $this->app->register(IdeHelperServiceProvider::class);
+        if (app()->environment() == 'local') {
+            app()->register(DebugbarServiceProvider::class);
+            app()->register(IdeHelperServiceProvider::class);
+            app()->register(ThunderclapServiceProvider::class);
         }
     }
 }
