@@ -12,7 +12,7 @@ export default function (containerSelector, tags = []) {
     tags.forEach(tag => {
         let a = document.createElement('a');
 
-        a.className = 'label label-default';
+        a.className = 'p-category label label-default';
         a.href = '#';
         a.textContent = tag;
         a.rel = 'tag';

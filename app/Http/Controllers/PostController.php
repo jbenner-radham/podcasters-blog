@@ -67,6 +67,10 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
 
+        $post->tagNames = $post->tags->map(function ($tag) {
+           return $tag->name;
+        });
+
         return view('post.show')->withPost($post);
     }
 

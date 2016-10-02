@@ -18,7 +18,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Blade::directive('datetime', function($expression) {
-            return "<?= (new DateTime($expression))->format('F j, Y g:i a'); ?>";
+            return "<?=(new DateTime($expression))->format('F j, Y g:i a')?>";
+        });
+
+        Blade::directive('json', function ($data) {
+           return "<?=json_encode($data)?>";
         });
     }
 
