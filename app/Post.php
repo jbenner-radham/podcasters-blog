@@ -31,8 +31,34 @@ class Post extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'content'
+        'name', 'content', 'tags'
     ];
+
+    /**
+     * Set the various tag relations from a CSV string.
+     *
+     * @param string $tagsCsv
+     * @return void
+     */
+    public function setTagsAttribute($tagsCsv)
+    {
+        $newTagNames = explode(',', $tagsCsv);
+        $tagNames = $this->tags->map(function ($tag) {
+            return $tag->name;
+        })->toArray();
+
+        collect($newTagNames)->map(function ($tagName) {
+            return trim($tagName);
+        })->reject(function ($tagName) use ($tagNames) {
+            return in_array($tagName, $tagNames);
+        })->each(function ($tagName) {
+            $tag = new Tag;
+            $tag->name = $tagName;
+
+            $tag->save();
+            $this->tags()->attach($tag);
+        });
+    }
 
     /**
      * Get the tags associated with the post.
