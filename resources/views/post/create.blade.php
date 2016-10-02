@@ -20,6 +20,10 @@
                                 <textarea name="content"></textarea>
                             </div>
 
+                            <div class="field post__tags">
+                                <!-- tags -->
+                            </div>
+
                             <br>
 
                             <button class="btn btn-primary" type="submit">Submit</button>
@@ -36,7 +40,7 @@
     <script>
         $(document).ready(function() {
             new MediumEditor('[name="content"]');
-            taggify(['hello', 'world']);
+            tagify('.post__tags', ['hello', 'world']);
         });
     </script>
 @endsection

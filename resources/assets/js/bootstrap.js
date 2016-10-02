@@ -44,4 +44,4 @@ Vue.http.interceptors.push((request, next) => {
 //     key: 'your-pusher-key'
 // });
 
-window.taggify = require('./modules/taggify');
+window.tagify = require('./modules/tagify');

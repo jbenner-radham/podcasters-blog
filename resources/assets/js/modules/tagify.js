@@ -1,5 +1,11 @@
-export default function (tags = []) {
+export default function (containerSelector, tags = []) {
     'use strict';
+
+    let container = document.querySelector(containerSelector);
+
+    if (!container) {
+        throw new Error('Tagify container is null.');
+    }
 
     let section = document.createElement('section');
 
@@ -15,5 +21,5 @@ export default function (tags = []) {
         section.appendChild(a);
     });
 
-    document.body.appendChild(section);
+    container.appendChild(section);
 }
