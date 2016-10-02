@@ -81,7 +81,7 @@
     @yield('content')
 
     <!-- Scripts -->
-    @yield('scripts')
     <script src="/js/app.js"></script>
+    @yield('scripts')
 </body>
 </html>

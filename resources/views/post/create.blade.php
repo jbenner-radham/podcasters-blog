@@ -34,6 +34,9 @@
 @section('scripts')
     <script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
     <script>
-        var content = new MediumEditor('[name="content"]');
+        $(document).ready(function() {
+            new MediumEditor('[name="content"]');
+            taggify(['hello', 'world']);
+        });
     </script>
 @endsection
