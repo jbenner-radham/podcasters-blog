@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Presenters\PostPresenter;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -13,8 +14,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property integer $user_id
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Tag[] $tags
+ * @property \Illuminate\Database\Eloquent\Collection|\App\Tag[] $tags
  * @property-read \App\User $user
+ * @property-read mixed $tag_names
  * @method static \Illuminate\Database\Query\Builder|\App\Post whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Post whereName($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Post whereContent($value)
@@ -25,6 +27,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Post extends Model
 {
+    use PostPresenter;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -43,9 +47,7 @@ class Post extends Model
     public function setTagsAttribute($tagsCsv)
     {
         $newTagNames = explode(',', $tagsCsv);
-        $tagNames = $this->tags->map(function ($tag) {
-            return $tag->name;
-        })->toArray();
+        $tagNames = $this->tag_names;
 
         collect($newTagNames)->map(function ($tagName) {
             return trim($tagName);

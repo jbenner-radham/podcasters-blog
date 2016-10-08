@@ -20,7 +20,7 @@
 @section('scripts')
     <script>
         $(document).ready(function() {
-            tagify('.h-entry', @json($post->tagNames));
+            tagify('.h-entry', @json($post->tag_names));
         });
     </script>
 @endsection
