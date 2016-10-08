@@ -1,5 +1,7 @@
-export default function (containerSelector, tags = []) {
+export default function (containerSelector, tags) {
     'use strict';
+
+    tags = Array.isArray(tags) ? tags : [];
 
     let container = document.querySelector(containerSelector);
 

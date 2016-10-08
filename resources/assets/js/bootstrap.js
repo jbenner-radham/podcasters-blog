@@ -44,4 +44,5 @@ Vue.http.interceptors.push((request, next) => {
 //     key: 'your-pusher-key'
 // });
 
+window.MediumEditor = require('medium-editor');
 window.tagify = require('./modules/tagify');

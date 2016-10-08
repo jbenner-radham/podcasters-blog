@@ -36,7 +36,6 @@
 @endsection
 
 @section('scripts')
-    <script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
     <script>
         $(document).ready(function() {
             new MediumEditor('[name="content"]');
