@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Presenters\PostPresenter;
+use App\Unpresenters\PostUnpresenter;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -28,6 +29,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use PostPresenter;
+    use PostUnpresenter;
 
     /**
      * The attributes that are mass assignable.
@@ -37,30 +39,6 @@ class Post extends Model
     protected $fillable = [
         'name', 'content', 'tags'
     ];
-
-    /**
-     * Set the various tag relations from a CSV string.
-     *
-     * @param string $tagsCsv
-     * @return void
-     */
-    public function setTagsAttribute($tagsCsv)
-    {
-        $newTagNames = explode(',', $tagsCsv);
-        $tagNames = $this->tag_names;
-
-        collect($newTagNames)->map(function ($tagName) {
-            return trim($tagName);
-        })->reject(function ($tagName) use ($tagNames) {
-            return in_array($tagName, $tagNames);
-        })->each(function ($tagName) {
-            $tag = new Tag;
-            $tag->name = $tagName;
-
-            $tag->save();
-            $this->tags()->attach($tag);
-        });
-    }
 
     /**
      * Get the tags associated with the post.
