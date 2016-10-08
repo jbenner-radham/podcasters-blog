@@ -8,6 +8,10 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+// Medium Editor
+@import "node_modules/medium-editor/dist/css/medium-editor";
+@import "node_modules/medium-editor/dist/css/themes/tim";
+
 /*
 body {
   font-size: 15px;

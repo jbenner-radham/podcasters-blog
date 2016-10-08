@@ -1,10 +1,5 @@
 @extends('layouts.app')
 
-@section('styles')
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/medium-editor/5.22.0/css/themes/tim.min.css">
-@endsection
-
 @section('content')
     <div class="container">
         <div class="row">
