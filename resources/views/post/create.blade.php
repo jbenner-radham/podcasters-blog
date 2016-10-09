@@ -32,7 +32,7 @@
 
 @section('scripts')
     <script>
-        $(document).ready(function() {
+        document.addEventListener('DOMContentLoaded', function (event) {
             new MediumEditor('[name="content"]');
         });
     </script>
