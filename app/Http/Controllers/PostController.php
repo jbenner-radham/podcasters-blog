@@ -47,8 +47,8 @@ class PostController extends Controller
     public function store(Request $request)
     {
         Post::create([
-            'name'    => PostServiceProvider::getName($request->content),
             'content' => PostServiceProvider::getContent($request->content),
+            'name'    => PostServiceProvider::getName($request->content),
             'user_id' => Auth::user()->id
         ]);
 

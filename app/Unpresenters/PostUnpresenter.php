@@ -20,7 +20,7 @@ trait PostUnpresenter
         collect($newTagNames)->map(function ($tagName) {
             return trim($tagName);
         })->reject(function ($tagName) use ($tagNames) {
-            return in_array($tagName, $tagNames);
+            return $tagNames->contains($tagName);
         })->each(function ($tagName) {
             $this->tags()->attach(Tag::create(['name' => $tagName]));
         });
