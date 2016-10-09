@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
             return "<?=(new DateTime($expression))->format('F j, Y g:i a')?>";
         });
 
-        Blade::directive('json', function ($data) {
+        Blade::directive('jsonify', function ($data) {
            return "<?=json_encode($data)?>";
         });
     }
