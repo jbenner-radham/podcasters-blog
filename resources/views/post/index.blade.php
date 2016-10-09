@@ -14,7 +14,7 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <h3>
-                                    <a href="{{ route('post.show', $post->id) }}">
+                                    <a href="{{ route('posts.show', $post->id) }}">
                                         {{ strip_tags($post->name) }}
                                     </a>
                                 </h3>

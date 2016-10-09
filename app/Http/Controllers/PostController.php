@@ -52,7 +52,7 @@ class PostController extends Controller
             'user_id' => Auth::user()->id
         ]);
 
-        return redirect()->route('post.index')->withMessage('Post created successfully.');
+        return redirect()->route('posts.index')->withMessage('Post created successfully.');
     }
 
     /**

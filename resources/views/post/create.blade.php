@@ -8,7 +8,7 @@
                     <div class="panel-heading">New Post</div>
 
                     <div class="panel-body">
-                        <form class="ui form" action="{{ route('post.store') }}" method="POST">
+                        <form class="ui form" action="{{ route('posts.store') }}" method="POST">
                             {!! csrf_field() !!}
 
                             <div class="field">
