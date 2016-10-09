@@ -9,6 +9,7 @@ trait PostUnpresenter
     /**
      * Set the various tag relations from a CSV string.
      *
+     * @todo Replace with `$this->tags()->sync(...)`?
      * @param string $tagsCsv
      * @return void
      */
