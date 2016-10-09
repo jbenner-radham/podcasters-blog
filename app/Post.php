@@ -3,7 +3,6 @@
 namespace App;
 
 use App\Presenters\PostPresenter;
-use App\Unpresenters\PostUnpresenter;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -29,7 +28,6 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use PostPresenter;
-    use PostUnpresenter;
 
     /**
      * The attributes that are mass assignable.
