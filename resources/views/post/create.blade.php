@@ -8,7 +8,7 @@
                     <div class="panel-heading">New Post</div>
 
                     <div class="panel-body">
-                        <form class="ui form" action="{{ route('post.store') }}" method="POST" >
+                        <form class="ui form" action="{{ route('post.store') }}" method="POST">
                             {!! csrf_field() !!}
 
                             <div class="field">
@@ -16,7 +16,7 @@
                             </div>
 
                             <div class="field post__tags">
-                                <!-- tags -->
+                                <input type="text" name="tags" placeholder="comma,separated,tags">
                             </div>
 
                             <br>
@@ -34,7 +34,6 @@
     <script>
         $(document).ready(function() {
             new MediumEditor('[name="content"]');
-            tagify('.post__tags', ['hello', 'world']);
         });
     </script>
 @endsection
